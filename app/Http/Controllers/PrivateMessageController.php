@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\PrivateMessage;
 use Illuminate\Http\Request;
 
@@ -62,6 +63,10 @@ class PrivateMessageController extends Controller
         $data = PrivateMessage::where('id', $pm->id)->first();
 
         return response(['data' => $data], 201);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
 

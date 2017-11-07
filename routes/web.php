@@ -19,6 +19,17 @@ Route::get('/testPrivateMessage', function() {
     return App\PrivateMessage::where('id', 1)->first();
 });
 
+Route::get('/chat', function(){
+    return view('chat');
+})->middleware('auth');
+
+Route::get('/chatMessages', function(){
+    return \App\ChatMessage::with('user')->get();
+})->middleware('auth');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

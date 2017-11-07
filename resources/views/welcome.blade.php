@@ -82,12 +82,6 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
-                <div id="app">
-                    <chat-log :messages="messages"></chat-log>
-                    <chat-composer v-on:messagesent="addMessage"></chat-composer>
-                </div>
-
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
