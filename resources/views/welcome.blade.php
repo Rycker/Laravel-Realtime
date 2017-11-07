@@ -82,6 +82,12 @@
                     Laravel
                 </div>
 
+                <div id="app">
+                    <chat-message></chat-message>
+                    <chat-log></chat-log>
+                    <chat-composer></chat-composer>
+                </div>
+
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
@@ -92,4 +98,7 @@
             </div>
         </div>
     </body>
+    <footer>
+        <script src="js/app.js"></script>
+    </footer>
 </html>
