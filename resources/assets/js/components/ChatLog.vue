@@ -1,14 +1,14 @@
 <template lang="html">
     <div class="chat-log">
-        <chat-message></chat-message>
-        <chat-message></chat-message>
-        <chat-message></chat-message>
+        <chat-message v-for="message in messages" :key="+message" :message="message"></chat-message>
     </div>
 </template>
 
 
 <script>
-    export default{}
+    export default{
+        props: ['messages']
+    }
 </script>
 
 <style lang="css">
