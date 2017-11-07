@@ -1413,6 +1413,9 @@ var app = new Vue({
             //dicionar a mensagens existentes
             this.messages.push(message);
             //Persiste no DB e etc.
+            axios.post('/chatMessages', message).then(function (response) {
+                console.log(response.status);
+            });
         }
     },
     created: function created() {
@@ -43562,7 +43565,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sendMessage: function sendMessage() {
             this.$emit('messagesent', {
                 message: this.messageText,
-                user: "John Doe"
+                user: {
+                    name: $('.navbar-right .dropdown-toggle').text()
+                }
             });
             //                console.log(this.messageText);
             this.messageText = '';

@@ -29,6 +29,9 @@ const app = new Vue({
             //dicionar a mensagens existentes
             this.messages.push(message);
             //Persiste no DB e etc.
+            axios.post('/chatMessages', message).then(response => {
+                console.log(response);
+            })
         }
     },
     created() {
