@@ -39,5 +39,19 @@ const app = new Vue({
             this.messages = response.data;
             // console.log(response);
         });
+
+        Echo.join("chatroom")
+            .here(function(){
+                console.log('Dentro');
+            })
+            .joining(function(){
+                console.log('Entrnado');
+            })
+            .leaving(function(){
+                console.log('Saindo');
+            })
+            .listen('ChatMessagePosted', function (e) {
+                console.log(e)
+            });
     }
 });
