@@ -30,8 +30,8 @@ const app = new Vue({
             this.messages.push(message);
             //Persiste no DB e etc.
             axios.post('/chatMessages', message).then(response => {
-                console.log(response);
-            })
+                //console.log(response);
+            });
         }
     },
     created() {
@@ -45,13 +45,17 @@ const app = new Vue({
                 console.log('Dentro');
             })
             .joining(function(){
-                console.log('Entrnado');
+                console.log('Entrando');
             })
             .leaving(function(){
                 console.log('Saindo');
             })
-            .listen('ChatMessagePosted', function (e) {
-                console.log(e)
+            .listen('ChatMessagePosted', (e)=> {
+		this.messages.push({
+		    message: e.message.message,
+		    user: e.user
+		});
+                //console.log(e);
             });
     }
 });

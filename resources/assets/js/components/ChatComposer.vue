@@ -2,7 +2,7 @@
     <div class="chat-composer">
         <!--<input type="text" placeholder="Digite sua mensagem aqui...">-->
         <input type="text" placeholder="Digite sua mensagem aqui..." v-model="messageText" @keyup.enter="sendMessage">
-        <button type="button" class="btn btn-primary" @click="sendMessage">Eviar</button>
+        <button type="button" class="btn btn-primary" @click="sendMessage">Enviar</button>
     </div>
 </template>
 
