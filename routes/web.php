@@ -36,7 +36,7 @@ Route::post('/chatMessages', function(){
     ]);
 
     //Annouce that a new chat message has been posted
-    event(new ChatMessagePosted($message, $user));
+    broadcast(new ChatMessagePosted($message, $user))->toOthers();
 
     return ['status' => $user];
 })->middleware('auth');
