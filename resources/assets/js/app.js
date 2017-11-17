@@ -1,3 +1,4 @@
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -15,48 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example', require('./components/Example.vue'));
-Vue.component('chat-message', require('./components/ChatMessage.vue'));
-Vue.component('chat-log', require('./components/ChatLog.vue'));
-Vue.component('chat-composer', require('./components/ChatComposer.vue'));
 
 const app = new Vue({
-    el: '#app',
-    data: {
-        messages: [],
-        usersInRoom: []
-    },
-    methods: {
-        addMessage(message){
-            //dicionar a mensagens existentes
-            this.messages.push(message);
-            //Persiste no DB e etc.
-            axios.post('/chatMessages', message).then(response => {
-                //console.log(response);
-            });
-        }
-    },
-    created() {
-        axios.get('/chatMessages').then(response => {
-            this.messages = response.data;
-            // console.log(response);
-        });
-
-        Echo.join("chatroom")
-            .here((users) =>{
-                this.usersInRoom = users;
-            })
-            .joining((user) =>{
-                this.usersInRoom.push(user);
-            })
-            .leaving((user) =>{
-                this.usersInRoom = this.usersInRoom.filter(u => u != user);
-            })
-            .listen('ChatMessagePosted', (e)=> {
-                this.messages.push({
-                    message: e.message.message,
-                    user: e.user
-                });
-                //console.log(e);
-            });
-    }
+    el: '#app'
 });

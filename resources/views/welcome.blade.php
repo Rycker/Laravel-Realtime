@@ -11,7 +11,6 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
             html, body {
                 background-color: #fff;
@@ -82,6 +81,7 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
+
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
@@ -92,7 +92,4 @@
             </div>
         </div>
     </body>
-    <footer>
-        <script src="js/app.js"></script>
-    </footer>
 </html>

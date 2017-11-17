@@ -16,11 +16,3 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-/*Private Message urls*/
-
-Route::post('get-private-message-notification', 'PrivateMessageController@getUserNotifications');
-Route::post('get-private-messages', 'PrivateMessageController@getPrivateMessages');
-Route::post('get-private-message', 'PrivateMessageController@getPrivateMessageById');
-Route::post('get-private-messages-sent', 'PrivateMessageController@getPrivateMessageSent');
-Route::post('send-private-message', 'PrivateMessageController@sendPrivateMessage');
