@@ -13,7 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <div id="app">
+                        <inbox-pms></inbox-pms>
+                    </div>
                     You are logged in!
                 </div>
             </div>

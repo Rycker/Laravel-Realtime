@@ -26,38 +26,32 @@ const app = new Vue({
         messages: [],
         usersInRoom: []
     },
-    methods: {
-        // addMessage(message){
-        //     //dicionar a mensagens existentes
-        //     this.messages.push(message);
-        //     //Persiste no DB e etc.
-        //     axios.post('/chatMessages', message).then(response => {
-        //         //console.log(response);
-        //     });
-        // }
-    },
+    // methods: {
+    //     // addMessage(message){
+    //     //     //dicionar a mensagens existentes
+    //     //     this.messages.push(message);
+    //     //     //Persiste no DB e etc.
+    //     //     axios.post('/chatMessages', message).then(response => {
+    //     //         //console.log(response);
+    //     //     });
+    //     // }
+    // },
     created() {
         // axios.get('/chatMessages').then(response => {
         //     this.messages = response.data;
         //     // console.log(response);
         // });
 
-        Echo.join("privateMessage")
-            .here(function(){
-                console.log('aqui');
-            })
-            .joining(function(){
-                console.log('Entrando');
-            })
-            .leaving(function(){
-                console.log('Saindo');
-            });
-            // .listen('ChatMessagePosted', (e)=> {
-                // this.messages.push({
-                //     message: e.message.message,
-                //     user: e.user
-                // });
-                // console.log(e);
-            // });
+        // Echo.join("privateMessage")
+        //     .here(function(){
+        //         alert('teste');
+        //         console.log('aqui');
+        //     })
+        //     .joining(function(){
+        //         console.log('Entrando');
+        //     })
+        //     .leaving(function(){
+        //         console.log('Saindo');
+        //     });
     }
 });
