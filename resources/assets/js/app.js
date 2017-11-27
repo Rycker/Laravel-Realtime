@@ -43,21 +43,21 @@ const app = new Vue({
         // });
 
         Echo.join("privateMessage")
-            .here((users) =>{
-                this.usersInRoom = users;
+            .here(function(){
+                console.log('aqui');
             })
-            .joining((user) =>{
-                this.usersInRoom.push(user);
+            .joining(function(){
+                console.log('Entrando');
             })
-            .leaving((user) =>{
-                this.usersInRoom = this.usersInRoom.filter(u => u != user);
-            })
-            .listen('ChatMessagePosted', (e)=> {
+            .leaving(function(){
+                console.log('Saindo');
+            });
+            // .listen('ChatMessagePosted', (e)=> {
                 // this.messages.push({
                 //     message: e.message.message,
                 //     user: e.user
                 // });
-                console.log(e);
-            });
+                // console.log(e);
+            // });
     }
 });
