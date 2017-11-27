@@ -27,22 +27,22 @@ const app = new Vue({
         usersInRoom: []
     },
     methods: {
-        addMessage(message){
-            //dicionar a mensagens existentes
-            this.messages.push(message);
-            //Persiste no DB e etc.
-            axios.post('/chatMessages', message).then(response => {
-                //console.log(response);
-            });
-        }
+        // addMessage(message){
+        //     //dicionar a mensagens existentes
+        //     this.messages.push(message);
+        //     //Persiste no DB e etc.
+        //     axios.post('/chatMessages', message).then(response => {
+        //         //console.log(response);
+        //     });
+        // }
     },
     created() {
-        axios.get('/chatMessages').then(response => {
-            this.messages = response.data;
-            // console.log(response);
-        });
+        // axios.get('/chatMessages').then(response => {
+        //     this.messages = response.data;
+        //     // console.log(response);
+        // });
 
-        Echo.join("chatroom")
+        Echo.join("privateMessage")
             .here((users) =>{
                 this.usersInRoom = users;
             })
@@ -53,11 +53,11 @@ const app = new Vue({
                 this.usersInRoom = this.usersInRoom.filter(u => u != user);
             })
             .listen('ChatMessagePosted', (e)=> {
-                this.messages.push({
-                    message: e.message.message,
-                    user: e.user
-                });
-                //console.log(e);
+                // this.messages.push({
+                //     message: e.message.message,
+                //     user: e.user
+                // });
+                console.log(e);
             });
     }
 });
