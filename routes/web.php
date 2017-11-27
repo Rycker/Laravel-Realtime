@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/*Private Messages*/
+
+Route::get('get-private-message-notifications', 'PrivateMessageController@getUserNotifications');
+Route::post('get-private-messages', 'PrivateMessageController@getPrivateMessages');
+Route::post('get-private-message', 'PrivateMessageController@getPrivateMessageById');
+Route::post('get-private-messages-sent', 'PrivateMessageController@getPrivateMessageSent');
+Route::post('send-private-message', 'PrivateMessageController@sendPrivateMessage');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
